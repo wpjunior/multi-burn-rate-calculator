@@ -1,0 +1,107 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+  <head>
+    <meta charset="utf-8">
+    <title>Multiple Burn Rate Calculator</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  </head>
+
+  <body>
+    <nav class="light-blue lighten-1" role="navigation">
+      <div class="nav-wrapper container"><a id="logo-container" href="/" class="brand-logo">Multiple Burn Rate Calculator</a>
+      </div>
+    </nav>
+
+    <div class="section no-pad-bot" id="index-banner">
+      <div class="container">
+
+        <div class="row">
+          <form class="col s12">
+            <div class="row">
+              <div class="input-field col s6">
+                <input value="99.9" id="slo" type="number" step="any" max="100" class="validate">
+                <label for="slo">SLO</label>
+              </div>
+              <div class="input-field col s6">
+                <input placeholder="How long is error budget" id="slo_window" type="number" class="validate" value="30">
+                <label for="slo_window">SLO Window (days)</label>
+              </div>
+            </div>
+
+            <h5>Error Budget Consumption thresholds</h5>
+            <table>
+              <thead>
+                <tr>
+                  <th>Time</th>
+                  <th>Budget consumption (%)</th>
+                  <th>Burn rate</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    1h
+                  </td>
+                  <td>
+                    <input id="budget_consumption_1h" type="number" step="any" value="2" />
+                  </td>
+                  <td>
+                    <label id="burn_rate_1h"></label>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    6h
+                  </td>
+                  <td>
+                    <input id="budget_consumption_6h" type="number" step="any" value="5" />
+                  </td>
+                  <td>
+                    <label id="burn_rate_6h"></label>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    1d
+                  </td>
+                  <td>
+                    <input id="budget_consumption_1d" type="number" step="any" value="10" />
+                  </td>
+                  <td>
+                    <label id="burn_rate_1d"></label>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    3d
+                  </td>
+                  <td>
+                    <input id="budget_consumption_3d" type="number" step="any" value="10" />
+                  </td>
+                  <td>
+                    <label id="burn_rate_3d"></label>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+            <h5>Detection time</h5>
+            <div id="detection_time" />
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/export-data.js"></script>
+
+    <script src="/index.js"></script>
+  </body>
+
+</html>
